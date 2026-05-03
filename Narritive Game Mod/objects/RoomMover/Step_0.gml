@@ -1,4 +1,4 @@
-caif(keyboard_check(vk_space)) 
+if(keyboard_check(vk_space)) 
 {
 	room_goto(Game);
 }
