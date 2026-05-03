@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"Jump_Sound",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.57,
+  "exportDir":"",
+  "name":"Jump_Sound",
+  "parent":{
+    "name":"Sound",
+    "path":"folders/Sound.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"Jump_Sound.wav",
+  "volume":1.0,
+}
