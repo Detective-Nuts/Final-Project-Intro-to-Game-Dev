@@ -21,6 +21,7 @@ xAcelleration = 0.5;
 ySpd = 2;
 money = 0;
 grav = 1;
+slide_grav = 3;
 Max_Yspd = 7;
 Max_Xspd = 5;
 

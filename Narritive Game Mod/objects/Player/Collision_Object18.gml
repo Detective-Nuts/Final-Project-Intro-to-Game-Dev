@@ -1,3 +1,5 @@
-if (!sliding) { ySpd = 0;}
+if (ySpd > 0)
+{
 jumping = false;
 sliding = true;
+}

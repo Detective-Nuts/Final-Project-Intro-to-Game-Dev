@@ -3,7 +3,7 @@ depth = -y;
 move_and_collide(0,ySpd,[my_tilemap,Door])
 
 //make another tile map set
-show_debug_message(sliding)
+show_debug_message(grav);
 if (!place_meeting(x,y,Object18)) {sliding = false;}
 
 #region idfk
@@ -117,7 +117,7 @@ if(current_message == "NPC1")
 
 #region Jump
 
-	show_debug_message(ySpd)
+	//show_debug_message(ySpd)
 	ySpd += grav;
 	
 		if (grounded)
@@ -161,20 +161,18 @@ if(current_message == "NPC1")
 	falling = true;	
 	grounded = false
 	}
+	
+	if (falling && sliding)
+	{
+		ySpd = slide_grav;
+	}
 
-
-	if (falling && !sliding)
+	else if (falling && !sliding)
 	{
 		grav = 0.5;
-		ySpd += grav;
 	}
-	else if (falling && sliding)
-	{
-		grav = 0.1;
-		ySpd += grav;
-		
-	}
-	if (ySpd >= Max_Yspd) {ySpd = Max_Yspd}
+
+	if (ySpd >= Max_Yspd && !sliding) {ySpd = Max_Yspd}
 	
 	if (jumping || falling) {sprite_index = sprite_player_jump}
 	else {sprite_index = sprite_player_walk_side}
