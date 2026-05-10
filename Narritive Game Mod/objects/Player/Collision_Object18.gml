@@ -1,15 +1,18 @@
-if (ySpd > 0 && keyboard_check(ord("A"))) || ySpd > 0 && keyboard_check(ord("D"))
+if (ySpd > 0)
 {
-sliding = true;
+    sliding = true;
 
-	if(keyboard_check_pressed(vk_space) && keyboard_check(ord("A")))
+	if(keyboard_check_pressed(vk_space) && sliding)//&& (keyboard_check_pressed(ord("A"))))
 	{
-	 xSpd = -20;
-	}
+		audio_play_sound(Jump_Sound,1,false);
+		wallJumping = true;
+		grounded = false;
+		wallJumpTimer = wallJumpHoldFrames
+	}	
 	
-	if(keyboard_check_pressed(vk_space) && keyboard_check(ord("D")))
-	{
-	 xSpd = 20;
-	}
-}
 
+
+
+
+
+}

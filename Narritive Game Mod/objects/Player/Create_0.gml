@@ -7,6 +7,7 @@ KeyFound = false;
 grounded = false;
 falling = true;
 jumping = false;
+wallJumping = false;
 near_Door = true;
 fatty = true;
 sliding = false;
@@ -16,6 +17,8 @@ current_message = "";
 my_tilemap = layer_tilemap_get_id("Tiles_1");
 
 // Ints
+XTotalSpeed = 0;
+
 xSpd = 5;
 xAcelleration = 0.5;
 ySpd = 2;
@@ -27,7 +30,11 @@ Max_Xspd = 5;
 
 jumpHoldFrames = 30;
 jumpTimer = 0;
+
+wallJumpHoldFrames = 30;
+wallJumpTimer = 0;
 	
 jumpSpd = -5;
+xJumpSpd = 5
 
 //my_color = col(

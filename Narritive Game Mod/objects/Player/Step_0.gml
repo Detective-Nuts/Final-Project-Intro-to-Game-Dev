@@ -1,10 +1,16 @@
 // this happens every frame
 depth = -y;
-move_and_collide(0,ySpd,[my_tilemap,Door])
+XTotalSpeed = xJumpSpd + xSpd;
+move_and_collide(xSpd,0,[my_tilemap,Door])
 
+move_and_collide(0,ySpd,[my_tilemap,Door])
+//	show_debug_message(ySpd);
 //make another tile map set
-show_debug_message(grav);
-if (!place_meeting(x,y,Object18)) {sliding = false;}
+//show_debug_message(xSpd);
+if (!place_meeting(x,y,Object18)) {
+
+	sliding = false;
+	}
 
 #region idfk
 //if (distance_to_object(Door < 150) 
@@ -83,12 +89,21 @@ if(current_message == "NPC1")
 #endregion
 
 #region Keyboard
+	
+	if(xSpd >= 5) {xSpd = 5}
+	if(xSpd <= -5) {xSpd = -5}
+	show_debug_message(xJumpSpd);
+	
+
 	if(keyboard_check(ord("D")))
 	{
 		image_xscale = 1;
 		image_speed = 1;
 		sprite_index = sprite_player_walk_side;
-		move_and_collide(xSpd,0,[my_tilemap,Door])
+		
+		xSpd += xAcelleration;		
+		
+		//move_and_collide(xSpd,0,[my_tilemap,Door])
 	}
 	if(keyboard_check_released(ord("D")))
 	{
@@ -100,17 +115,24 @@ if(current_message == "NPC1")
 {
 	if(keyboard_check(ord("A")))
 	{
+		
 		image_xscale = -1;
 		image_speed	= 1;
 		sprite_index = sprite_player_walk_side; 
 		
+		xSpd -= xAcelleration;		
 		
-		move_and_collide(-xSpd,0,[my_tilemap,Door])
+		//move_and_collide(xSpd,0,[my_tilemap,Door])
+		
 	}
 		if(keyboard_check_released(ord("A")))
 	{
 		image_speed = 0;
 		image_index = 1;
+	}
+	if(!keyboard_check(ord("A")) &&! keyboard_check(ord("D")))
+	{
+	 xSpd *= 0.6
 	}
 }
 #endregion
@@ -127,7 +149,7 @@ if(current_message == "NPC1")
 
 	}
 
-	if(keyboard_check_pressed(vk_space) && grounded && !falling || sliding && keyboard_check_pressed(vk_space))
+	if(keyboard_check_pressed(vk_space) && grounded && !falling )//|| sliding && keyboard_check_pressed(vk_space))
 	{
 		audio_play_sound(Jump_Sound,1,false);
 		jumping = true;
@@ -137,6 +159,7 @@ if(current_message == "NPC1")
 	
 	if (jumping && jumpTimer >= 0 || sliding)
 	{
+		
 		ySpd = jumpSpd;
 		grounded = false;
 		jumpTimer --;
@@ -178,3 +201,26 @@ if(current_message == "NPC1")
 	else {sprite_index = sprite_player_walk_side}
 	
 #endregion
+
+	if (wallJumping && wallJumpTimer >= 0 )
+	{
+	
+		ySpd = jumpSpd;
+		xJumpSpd += 1;
+		if (xJumpSpd >= 5) {xJumpSpd = 5}
+		move_and_collide(xJumpSpd,0,[my_tilemap,Door])
+		grounded = false;
+		wallJumpTimer --;
+		show_debug_message("fart")
+	}
+	else {xJumpSpd = 0;}
+	
+		if (keyboard_check_released(vk_space) || wallJumpTimer <= 0)
+	{
+	
+	wallJumping = false;
+	//falling = true;
+	}
+	
+	
+var totalspd = xJumpSpd 
