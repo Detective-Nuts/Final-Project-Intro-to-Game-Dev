@@ -127,7 +127,7 @@ if(current_message == "NPC1")
 
 	}
 
-	if(keyboard_check_pressed(vk_space) && grounded && !falling)
+	if(keyboard_check_pressed(vk_space) && grounded && !falling || sliding && keyboard_check_pressed(vk_space))
 	{
 		audio_play_sound(Jump_Sound,1,false);
 		jumping = true;
@@ -135,7 +135,7 @@ if(current_message == "NPC1")
 		jumpTimer = jumpHoldFrames
 	}	
 	
-	if (jumping && jumpTimer >= 0)
+	if (jumping && jumpTimer >= 0 || sliding)
 	{
 		ySpd = jumpSpd;
 		grounded = false;
@@ -162,7 +162,7 @@ if(current_message == "NPC1")
 	grounded = false
 	}
 	
-	if (falling && sliding)
+	if (falling && sliding && !jumping)
 	{
 		ySpd = slide_grav;
 	}
