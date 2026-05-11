@@ -13,6 +13,8 @@ near_Door = true;
 fatty = true;
 sliding = false;
 slidingRight = false;
+nomoving = false;
+walljumpclear = false;
 
 // Strings
 current_message = "";
@@ -35,11 +37,16 @@ jumpTimer = 0;
 
 wallJumpHoldFrames = 30;
 wallJumpTimer = 0;
+wallJumpDir = 0;
 
 wallJumpRightHoldFrames = 30;
 wallJumpRightTimer = 0;
 	
 jumpSpd = -5;
 xJumpSpd = 0;
+
+
+
+
 
 //my_color = col(

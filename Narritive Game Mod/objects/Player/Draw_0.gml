@@ -13,7 +13,7 @@ draw_set_colour(make_colour_rgb(0,0,0));
 			}
 			if(current_message == "NPC2")
 			{
-				draw_text_ext(Dialogue.x+15,Dialogue.y+5,"The Exit's This Way!",50, 440);
+				draw_text_ext(Dialogue.x+15,Dialogue.y+5,"The exit's not down here! Try walljumping!",50, 440);
 			}
 				if(current_message == "NPC3")
 			{
@@ -22,6 +22,10 @@ draw_set_colour(make_colour_rgb(0,0,0));
 				if(current_message == "NPC4")
 			{
 				draw_text_ext(Dialogue.x+15,Dialogue.y+5,"Thanks a Bunch!",50, 440);
+			}
+				if(current_message == "NPC5")
+			{
+				draw_text_ext(Dialogue.x+15,Dialogue.y+5,"Could you bring a rope down here too I need to go to the bathroom....",50, 440);
 			}
 			
 			

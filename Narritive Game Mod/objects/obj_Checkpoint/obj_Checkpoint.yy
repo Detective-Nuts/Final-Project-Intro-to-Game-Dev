@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_DeathField",
+  "%Name":"obj_Checkpoint",
   "eventList":[],
   "managed":true,
-  "name":"obj_DeathField",
+  "name":"obj_Checkpoint",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"death_colider",
-    "path":"sprites/death_colider/death_colider.yy",
+    "name":"checkpoint",
+    "path":"sprites/checkpoint/checkpoint.yy",
   },
   "spriteMaskId":{
     "name":"sprite_Wall_Bottom",
