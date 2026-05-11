@@ -1,16 +1,16 @@
 // this happens every frame
 depth = -y;
-XTotalSpeed = xJumpSpd + xSpd;
+
+
 move_and_collide(xSpd,0,[my_tilemap,Door])
 
 move_and_collide(0,ySpd,[my_tilemap,Door])
 //	show_debug_message(ySpd);
 //make another tile map set
 //show_debug_message(xSpd);
-if (!place_meeting(x,y,Object18)) {
-
-	sliding = false;
-	}
+if (!place_meeting(x,y,obj_WallJumperLeft)) {sliding = false;}
+if (!place_meeting(x,y,obj_WallJumperRight)) {slidingRight = false;}
+//show_debug_message(slidingRight);
 
 #region idfk
 //if (distance_to_object(Door < 150) 
@@ -92,7 +92,7 @@ if(current_message == "NPC1")
 	
 	if(xSpd >= 5) {xSpd = 5}
 	if(xSpd <= -5) {xSpd = -5}
-	show_debug_message(xJumpSpd);
+	//show_debug_message(xJumpSpd);
 	
 
 	if(keyboard_check(ord("D")))
@@ -130,7 +130,7 @@ if(current_message == "NPC1")
 		image_speed = 0;
 		image_index = 1;
 	}
-	if(!keyboard_check(ord("A")) &&! keyboard_check(ord("D")))
+	if(!keyboard_check(ord("A")) && !keyboard_check(ord("D")))
 	{
 	 xSpd *= 0.6
 	}
@@ -157,7 +157,7 @@ if(current_message == "NPC1")
 		jumpTimer = jumpHoldFrames
 	}	
 	
-	if (jumping && jumpTimer >= 0 || sliding)
+	if (jumping && jumpTimer >= 0 || sliding || slidingRight)
 	{
 		
 		ySpd = jumpSpd;
@@ -185,35 +185,37 @@ if(current_message == "NPC1")
 	grounded = false
 	}
 	
-	if (falling && sliding && !jumping)
+	if (falling && sliding && !jumping || falling && slidingRight && !jumping)
 	{
 		ySpd = slide_grav;
 	}
 
-	else if (falling && !sliding)
+	else if (falling && !sliding || falling && !slidingRight)
 	{
 		grav = 0.5;
 	}
 
-	if (ySpd >= Max_Yspd && !sliding) {ySpd = Max_Yspd}
+	if (ySpd >= Max_Yspd && !sliding || ySpd >= Max_Yspd && !slidingRight) {ySpd = Max_Yspd}
 	
 	if (jumping || falling) {sprite_index = sprite_player_jump}
 	else {sprite_index = sprite_player_walk_side}
 	
 #endregion
-
+#region Walljumping Left
 	if (wallJumping && wallJumpTimer >= 0 )
 	{
 	
 		ySpd = jumpSpd;
-		xJumpSpd += 1;
-		if (xJumpSpd >= 5) {xJumpSpd = 5}
+		xJumpSpd = 3;
+		if(!keyboard_check(ord("A"))) {xJumpSpd *= 3;}
+		if (xJumpSpd >= 6.5) {xJumpSpd = 6.5}
 		move_and_collide(xJumpSpd,0,[my_tilemap,Door])
 		grounded = false;
 		wallJumpTimer --;
-		show_debug_message("fart")
+		//show_debug_message("fart")
 	}
-	else {xJumpSpd = 0;}
+	else {xJumpSpd -= 0.5;}
+	if (xJumpSpd <= 0) {xJumpSpd = 0}
 	
 		if (keyboard_check_released(vk_space) || wallJumpTimer <= 0)
 	{
@@ -221,6 +223,32 @@ if(current_message == "NPC1")
 	wallJumping = false;
 	//falling = true;
 	}
+#endregion	
+XTotalSpeed = xJumpSpd + xSpd;
+show_debug_message(XTotalSpeed);
+#region Walljumping Right
+	if (wallJumpingRight && wallJumpRightTimer >= 0 )
+	{
+	//show_debug_message("workplz")
+		ySpd = jumpSpd;
+		xJumpSpd = 3;
+		if(!keyboard_check(ord("D"))) {xJumpSpd *= -3;}
+		if (xJumpSpd <= -6.5) {xJumpSpd = -6.5}
+		move_and_collide(xJumpSpd,0,[my_tilemap,Door])
+		grounded = false;
+		wallJumpRightTimer --;
+		//show_debug_message("fart")
+	}
+	else {xJumpSpd += 0.5;}
+	if (xJumpSpd >= 0) {xJumpSpd = 0}
 	
+		if (keyboard_check_released(vk_space) || wallJumpRightTimer <= 0)
+	{
 	
-var totalspd = xJumpSpd 
+	wallJumpingRight = false;
+	//falling = true;
+	}
+#endregion
+	 
+XTotalSpeed = xJumpSpd + xSpd;
+//show_debug_message(XTotalSpeed);

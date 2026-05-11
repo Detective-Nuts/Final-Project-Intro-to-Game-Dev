@@ -8,9 +8,11 @@ grounded = false;
 falling = true;
 jumping = false;
 wallJumping = false;
+wallJumpingRight = false;
 near_Door = true;
 fatty = true;
 sliding = false;
+slidingRight = false;
 
 // Strings
 current_message = "";
@@ -33,8 +35,11 @@ jumpTimer = 0;
 
 wallJumpHoldFrames = 30;
 wallJumpTimer = 0;
+
+wallJumpRightHoldFrames = 30;
+wallJumpRightTimer = 0;
 	
 jumpSpd = -5;
-xJumpSpd = 5
+xJumpSpd = 0;
 
 //my_color = col(

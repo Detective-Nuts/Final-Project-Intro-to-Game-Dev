@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"Object18",
+  "%Name":"obj_WallJumperLeft",
   "eventList":[],
   "managed":true,
-  "name":"Object18",
+  "name":"obj_WallJumperLeft",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprite_Wall_Bottom",
+    "path":"sprites/sprite_Wall_Bottom/sprite_Wall_Bottom.yy",
+  },
   "spriteMaskId":{
     "name":"sprite_Wall_Bottom",
     "path":"sprites/sprite_Wall_Bottom/sprite_Wall_Bottom.yy",

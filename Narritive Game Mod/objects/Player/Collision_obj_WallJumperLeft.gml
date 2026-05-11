@@ -9,10 +9,4 @@ if (ySpd > 0)
 		grounded = false;
 		wallJumpTimer = wallJumpHoldFrames
 	}	
-	
-
-
-
-
-
 }
