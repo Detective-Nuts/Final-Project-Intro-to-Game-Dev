@@ -7,7 +7,7 @@ if (sprite_index = sprite_player_walk_side && XTotalSpeed = 0) {image_index	= 1}
 move_and_collide(XTotalSpeed,0,[my_tilemap,Door])
 
 move_and_collide(0,ySpd,[my_tilemap,Door])
-
+	
 if (!place_meeting(x,y,obj_WallJumperLeft)) {sliding = false;}
 if (!place_meeting(x,y,obj_WallJumperRight)) {slidingRight = false;}
 

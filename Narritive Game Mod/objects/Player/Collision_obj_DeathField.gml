@@ -1,3 +1,6 @@
-x = 64;
-y = 928;
+x = startX;
+y = startY;
+
+jumping = false;
+wallJumping = false;
 audio_play_sound(Die_Sound,1,0);

@@ -1,4 +1,5 @@
-
+startX = x;
+startY = y;
 
 
 // Booleans
