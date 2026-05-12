@@ -68,6 +68,18 @@ if(instance_exists(Player) && distance_to_object(NPC_2) < 8 && keyboard_check_pr
 		current_message = "NPC2";
 }
 
+if(instance_exists(Player) && distance_to_object(NPC_3) < 8 && keyboard_check_pressed(ord("E")))
+{ 
+
+		if(instance_exists(Dialogue))
+		{
+			instance_destroy(Dialogue)	
+		}
+		instance_create_layer(x-150,y-180,"dialouge",Dialogue);
+		
+		current_message = "NPC6";
+}
+
 
 
 if(current_message == "NPC2")
@@ -254,3 +266,5 @@ else
 	if (XTotalSpeed > 6.5) XTotalSpeed = 6.5;
 	if (XTotalSpeed < -6.5) XTotalSpeed = -6.5;
 #endregion	
+if (xSpd > 0 && sprite_index != sprite_player_sliding ) {image_xscale = 1}
+if (xSpd < 0 && sprite_index != sprite_player_sliding ) {image_xscale = -1}

@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"Font1",
+  "%Name":"Font5",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":34,
@@ -117,7 +117,7 @@
   "last":0,
   "lineHeight":39,
   "maintainGms1Font":false,
-  "name":"Font1",
+  "name":"Font5",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",

@@ -1,8 +1,10 @@
-draw_set_font(Font1);
+draw_set_font(Font4);
 draw_set_colour(c_white)
-draw_text(300,300,"Jumping Jones");
-draw_text(300,300,"In");
+draw_text(x_jones,270,"Jumping Jones"); // 239 points extra
+draw_text(339,y_in,"In...");
 draw_set_font(Font3);
-draw_text(300,400,"PLATFORMING PERIL!");
+draw_text(100,y_title,"PLATFORMING PERIL!");
+draw_set_font(Font4);
+draw_text(500,y_space, "Press Space to Start")
 
 //draw_text_ext()
