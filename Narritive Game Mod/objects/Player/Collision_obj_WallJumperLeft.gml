@@ -11,6 +11,9 @@ if (ySpd > 0)
 		wallJumpTimer = wallJumpHoldFrames
 		wallJumpDir = 1;
 		
+		var PartSys = part_system_create(JumpSlide);
+		part_system_position(PartSys,x - 35, y - 2);
+		
 		nomoving = true;
 	}	
 }

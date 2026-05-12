@@ -193,11 +193,41 @@ if(current_message == "NPC1")
 	else if (falling && !sliding || falling && !slidingRight)
 	{
 		grav = 0.5;
+		
+		if(sliding)
+		{
+			image_xscale = 1;
+			sprite_index = sprite_player_sliding;
+		}
+		else if(slidingRight)
+		{
+			image_xscale = -1;
+			sprite_index = sprite_player_sliding;
+		}
 	}
 
 	if (ySpd >= Max_Yspd && !sliding || ySpd >= Max_Yspd && !slidingRight) {ySpd = Max_Yspd}
 	
-	if (jumping || falling) {sprite_index = sprite_player_jump}
+		if (sliding)
+		{
+			var PartSys = part_system_create(Slide);
+			part_system_position(PartSys,x - 30, y - 16);
+		
+		image_xscale = 1;
+		sprite_index = sprite_player_sliding;
+		}
+		else if(slidingRight)
+		{
+			image_xscale = -1;
+			sprite_index = sprite_player_sliding;
+			var PartSys = part_system_create(Slide);
+			part_system_position(PartSys,x + 15, y - 16);
+		}
+	
+	else if (jumping || falling) {sprite_index = sprite_player_jump}
+	
+
+		
 	else {sprite_index = sprite_player_walk_side}
 	
 #endregion

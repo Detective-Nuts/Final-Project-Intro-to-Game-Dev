@@ -1,6 +1,8 @@
 startX = x;
 startY = y;
 
+audio_play_sound(Main_Level_Sound,1,1);
+
 
 // Booleans
 key = false;
