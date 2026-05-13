@@ -1,6 +1,7 @@
 // this happens every frame
 depth = -y;
 
+
 if (sprite_index = sprite_player_walk_side && XTotalSpeed = 0) {image_index	= 1}
 
 
@@ -8,8 +9,20 @@ move_and_collide(XTotalSpeed,0,[my_tilemap,Door])
 
 move_and_collide(0,ySpd,[my_tilemap,Door])
 	
-if (!place_meeting(x,y,obj_WallJumperLeft)) {sliding = false;}
-if (!place_meeting(x,y,obj_WallJumperRight)) {slidingRight = false;}
+if (!place_meeting(x,y,obj_WallJumperLeft)) 
+{
+	sliding = false;
+	audio_stop_sound(WallSlide_Sound);
+	nowalljumpsound = true;
+	
+}
+if (!place_meeting(x,y,obj_WallJumperRight)) 
+{
+	slidingRight = false;
+	audio_stop_sound(WallSlide_Sound_2);
+	nowalljumpsoundRight = true;
+}
+
 
 
 #region idfk
@@ -204,6 +217,7 @@ if(current_message == "NPC1")
 
 	else if (falling && !sliding || falling && !slidingRight)
 	{
+
 		grav = 0.5;
 		
 		if(sliding)
@@ -217,6 +231,7 @@ if(current_message == "NPC1")
 			sprite_index = sprite_player_sliding;
 		}
 	}
+
 
 	if (ySpd >= Max_Yspd && !sliding || ySpd >= Max_Yspd && !slidingRight) {ySpd = Max_Yspd}
 	

@@ -18,4 +18,10 @@ if (ySpd > 0)
 		nomoving = true;
 		//Player.wallJumpControlLock = 8;
 	}	
+	
+		if(nowalljumpsoundRight)
+		{
+		audio_play_sound(WallSlide_Sound_2,1,0);
+		nowalljumpsoundRight = false;
+		}
 }

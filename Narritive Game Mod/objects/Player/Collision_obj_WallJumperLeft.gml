@@ -16,4 +16,10 @@ if (ySpd > 0)
 		
 		nomoving = true;
 	}	
+	
+		if(nowalljumpsound)
+		{
+		audio_play_sound(WallSlide_Sound,1,0);
+		nowalljumpsound = false;
+		}
 }

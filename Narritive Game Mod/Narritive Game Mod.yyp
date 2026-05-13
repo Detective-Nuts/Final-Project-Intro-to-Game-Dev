@@ -76,6 +76,8 @@
     {"id":{"name":"Main_Level_Sound","path":"sounds/Main_Level_Sound/Main_Level_Sound.yy",},},
     {"id":{"name":"Main_Menu_Sound","path":"sounds/Main_Menu_Sound/Main_Menu_Sound.yy",},},
     {"id":{"name":"story_Sound","path":"sounds/story_Sound/story_Sound.yy",},},
+    {"id":{"name":"WallSlide_Sound_2","path":"sounds/WallSlide_Sound_2/WallSlide_Sound_2.yy",},},
+    {"id":{"name":"WallSlide_Sound","path":"sounds/WallSlide_Sound/WallSlide_Sound.yy",},},
     {"id":{"name":"checkpoint","path":"sprites/checkpoint/checkpoint.yy",},},
     {"id":{"name":"death_colider_1","path":"sprites/death_colider_1/death_colider_1.yy",},},
     {"id":{"name":"death_colider","path":"sprites/death_colider/death_colider.yy",},},

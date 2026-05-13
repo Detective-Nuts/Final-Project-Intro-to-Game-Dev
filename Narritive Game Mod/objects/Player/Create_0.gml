@@ -1,5 +1,7 @@
 startX = x;
 startY = y;
+nowalljumpsound = true;
+nowalljumpsoundRight = true;
 
 audio_play_sound(Main_Level_Sound,1,1);
 
