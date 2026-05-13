@@ -4,12 +4,6 @@ y_title -= 2;
 y_space -= 2;
 
 
-
-if (keyboard_check_pressed(ord("f")))
-{
-	window_set_fullscreen(f);
-}
-
 	
 if (x_jones >= 100) {x_jones = 100}
 if (y_in >= 270) {y_in = 270}
