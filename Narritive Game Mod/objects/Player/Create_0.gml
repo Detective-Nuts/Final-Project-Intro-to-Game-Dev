@@ -22,7 +22,7 @@ nomoving = false;
 walljumpclear = false;
 
 // Strings
-current_message = "";
+current_message = "hiu";
 my_tilemap = layer_tilemap_get_id("Tiles_1");
 
 // Ints

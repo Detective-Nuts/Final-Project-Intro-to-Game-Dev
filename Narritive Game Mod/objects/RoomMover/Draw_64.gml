@@ -1,3 +1,5 @@
+draw_set_halign(fa_left);
+
 draw_set_font(Font4);
 draw_set_colour(c_white)
 draw_text(x_jones,270,"Jumping Jones"); // 239 points extra

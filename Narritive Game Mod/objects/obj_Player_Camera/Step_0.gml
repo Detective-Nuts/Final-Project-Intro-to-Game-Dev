@@ -1,11 +1,15 @@
-if (Player.xSpd < 0) 
+if (Player.XTotalSpeed < -6) 
 {
 	x = lerp(x, Player.x - 100, 0.1)	
 }
 
-if (Player.xSpd > 0) 
+if (Player.XTotalSpeed > 6) 
 {
 	x = lerp(x, Player.x + 100, 0.1)	
+}
+else
+{
+	x = lerp(x, Player.x,0.1);
 }
 
 if (Player.ySpd < 0) 

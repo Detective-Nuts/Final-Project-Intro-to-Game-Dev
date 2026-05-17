@@ -218,7 +218,7 @@ if(current_message == "NPC1")
 	else if (falling && !sliding || falling && !slidingRight)
 	{
 
-		grav = 0.5;
+		grav = 1.4;
 		
 		if(sliding)
 		{
